@@ -7,9 +7,9 @@
 </head>
 <body>
     <?php include('config/config.php') ?>
-    <?php include('modules/header.php') ?>
-    <?php include('modules/menu.php') ?>
-    <?php include('modules/main.php') ?>
+    <?php include('modules/header.php') ?><br>
+    <?php include('modules/menu.php') ?><br>
+    <?php include('modules/main.php') ?><br>
     <?php include('modules/footer.php') ?>
 </body>
 </html>

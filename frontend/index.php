@@ -10,11 +10,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <?php
+        $mysqli = mysqli_connect('localhost', 'root', 'Tai@02102003', 'php_ad');
+        if(mysqli_connect_errno()){
+            echo "Error connectiong to MySQL: ".mysqli_connect_error();
+        }
+    ?>
     <?php include('header.php'); ?>
-    <section class="mymaincontent my-3 bg-white">
-        <h1>cart</h1>
-    </section>
+    <?php include('menu.php') ?>
+    <?php include('main.php') ?>
     <?php include('footer.php'); ?>
 </body>
 

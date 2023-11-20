@@ -28,7 +28,7 @@
                         <input type="submit" value="Đăng Nhập">
                     </div>
                     <div class="input-form">
-                        <p>Bạn Chưa Có Tài Khoản? <a href="./sign-up.html">Đăng Ký</a></p>
+                        <p>Bạn Chưa Có Tài Khoản? <a href="./sign-up.php">Đăng Ký</a></p>
                     </div>
                 </form>
             </div>

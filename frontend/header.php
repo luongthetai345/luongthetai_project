@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row py-3">
                 <div class="col-md-3">
-                    <a href="./homepage.php"><img src="./imgs/logo.png" alt=""></a>
+                    <a href="index.php?quanly=index"><img src="./imgs/logo.png" alt=""></a>
                 </div>
                 <div class="col-md-4">
                     <div class="input-group mb-3">
@@ -55,7 +55,7 @@
 
                 </div>
                 <div class="col-md-2">
-                    <div class="fs-2"><a href="./cart.php" style="color: #FFFFFF; text-decoration: none;"><i class="fa-solid fa-cart-shopping" ></i></a></div>
+                    <div class="fs-2"><a href="index.php?quanly=giohang" style="color: #FFFFFF; text-decoration: none;"><i class="fa-solid fa-cart-shopping" ></i></a></div>
                 </div>
             </div>
         </div>
