@@ -10,7 +10,9 @@
         }else if($tam == 'danhmucsanpham'){
             include('main/danhmuc.php');
         }else if($tam == 'giohang'){
-            include('main/cart.php');
+            include('main/giohang.php');
+        }else if($tam == 'sanpham'){
+            include('main/sanpham.php');
         }
     ?>
 </div>

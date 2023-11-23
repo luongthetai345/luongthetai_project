@@ -2,9 +2,9 @@
     include('../../config/config.php');
     $tensanpham = $_POST['tensp'];
     $soluong = $_POST['soluong'];
-    $file=$_FILES['anh'];
-    $anh=$file['name'];
+    $anh=$_FILES['anh']['name'];
     $anh_tmp = $_FILES['anh']['tmp_name'];
+    $anh = time().'_'.$anh;
     $gioithieu = $_POST['gioithieu'];
     $gia = $_POST['gia'];
     $danhmuc = $_POST['danhmuc'];
@@ -22,7 +22,21 @@
         }
        
     }else if(isset($_POST['sua'])){
-        $sql_update = "UPDATE php_ad.tblproduct SET name_product='".$tensanpham."', soluong='".$soluong."', anh='".$anh."', introduct='".$gioithieu."', gia='".$gia."', category='".$danhmuc."', thutu='".$thutu."' WHERE id_product = '$_GET[idsp]'";
+        if($anh == ''){
+            $sql_update = "UPDATE php_ad.tblproduct SET name_product='".$tensanpham."', soluong='".$soluong."', anh='".$anh."'
+            , introduct='".$gioithieu."', gia='".$gia."', category='".$danhmuc."', thutu='".$thutu."' WHERE id_product = '$_GET[idsp]'";
+           
+        }else{
+            move_uploaded_file($anh_tmp, "imgs/".$anh);
+            $sql = "SELECT * FROM tblproduct WHERE id_product = '$_GET[idsp]' LIMIT 1";
+            $query = mysqli_query($mysqli, $sql);
+            while($row = mysqli_fetch_array($query)){
+                unlink('imgs/'.$row['anh']);
+            }
+            $sql_update = "UPDATE php_ad.tblproduct SET name_product='".$tensanpham."', soluong='".$soluong."', anh='".$anh."'
+            , introduct='".$gioithieu."', gia='".$gia."', category='".$danhmuc."', thutu='".$thutu."' WHERE id_product = '$_GET[idsp]'";
+        }
+        
         mysqli_query($mysqli, $sql_update);
         header('Location:../../index.php?action=quanlysanpham&query=them');
     }else {

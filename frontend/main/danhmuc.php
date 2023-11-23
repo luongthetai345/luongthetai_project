@@ -26,10 +26,17 @@
         ul{
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
         }
         li{
+            margin-right: 20px;
+           
+        }
+        .li{
             display: flex;
-            margin-right: 50px;
+            margin-right: 100px;
+            margin-bottom: 50px;
+            border: 1px solid green;
         }
     </style>
         <div class="container">       
@@ -38,11 +45,11 @@
                 <?php
                     while($row_pro = mysqli_fetch_array($query_product)){
                 ?>
-                <li>
-                    <a href="">
-                        <img src="../admin/modules/quanlysp/imgs/<?php echo $row_pro['anh'] ?>" height="200px" width="200px" >
+                <li class="li">
+                    <a href="index.php?quanly=sanpham&id=<?php echo $row_pro['id_product']; ?>">
+                        <img src="../admin/modules/quanlysp/imgs/<?php echo $row_pro['anh'] ?>" height="200px" width="300px" >
                         <p>Tên sản phẩm: <?php echo $row_pro['name_product'] ?></p>
-                        <p>Giá: <?php echo $row_pro['gia'] ?></p>
+                        <p>Giá: <?php echo $row_pro['gia']." VNĐ" ?></p>
                     </a>
                 </li>
                 <?php

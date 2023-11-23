@@ -10,6 +10,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php
+        $sql_pro = "SELECT * FROM php_ad.tblproduct, php_ad.tblcategory WHERE php_ad.tblproduct.category = php_ad.tblcategory.id_category LIMIT 10";
+        $query_pro = mysqli_query($mysqli, $sql_pro);
+    ?>
+    <style>
+        ul{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        li{
+            margin-right: 20px;
+           
+        }
+        .li{
+            display: flex;
+            margin-right: 10px;
+            margin-bottom: 50px;
+            border: 1px solid green;
+        }
+    </style>
 <section class="mymaincontent my-3 bg-white">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -33,101 +54,22 @@
                 </button>
         </div>
         <div class="container">
-            <div class="product_tittle border-bottom">
-                <h3><strong>Laptop</strong></h3>
-            </div>
-            <div class="product_list-s py-3">
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/lap1.webp" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/lap1.webp" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/lap1.webp" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/lap1.webp" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/lap1.webp" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/lap1.webp" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/lap1.webp" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/lap1.webp" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="product_tittle border-bottom">
-                <h3><strong>PC</strong></h3>
-            </div>
-            <div class="product_list-s py-3">
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/pc1.jpg" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/pc1.jpg" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/pc1.jpg" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/pc1.jpg" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/pc1.jpg" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/pc1.jpg" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/pc1.jpg" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <img src="./imgs/pc1.jpg" alt="" height="200px" width="200px">
-                        <p>Tên sản phẩm</p>
-                        <p>190000 đ</p>
-                    </div>
-                </div>
-            </div>
+            <h3>Sản phẩm mới nhất</h3>
+            <ul>
+                <?php
+                    while($row = mysqli_fetch_array($query_pro)){
+                ?>
+                <li class="li">
+                    <a href="index.php?quanly=sanpham&id=<?php echo $row['id_product']; ?>">
+                        <img src="../admin/modules/quanlysp/imgs/<?php echo $row['anh'] ?>" height="200px" width="300px">
+                        <p>Tên sản phẩm: <?php echo $row['name_product'] ?></p>
+                        <p>Giá: <?php echo $row['gia'].' VNĐ' ?></p>
+                    </a>
+                </li>
+                <?php
+                     }
+                ?>
+            </ul>
         </div>
     </section>
 </body>
