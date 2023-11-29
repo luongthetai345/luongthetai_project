@@ -12,12 +12,7 @@
 </head>
 
 <body>
-    <?php
-        $mysqli = mysqli_connect('localhost', 'root', 'Tai@02102003', 'php_ad');
-        if(mysqli_connect_errno()){
-            echo "Error connectiong to MySQL: ".mysqli_connect_error();
-        }
-    ?>
+    <?php include('../admin/config/config.php') ?>
     <?php include('header.php'); ?>
     <?php include('menu.php') ?>
     <?php include('main.php') ?>

@@ -10,6 +10,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
+<style>
+    .div1{
+        display: flex;
+        flex-direction: row;
+        margin-left: 100px;
+    }
+    img{
+        margin-right: 50px;
+    }
+    li{
+        margin-right: 20px;
+    }
+    h3{
+        margin-left: 100px;
+    }
+    .a{
+        width: 300px;
+    }
+</style>
     <?php
         $sql_pro = "SELECT * FROM php_ad.tblproduct, php_ad.tblcategory WHERE php_ad.tblproduct.category = php_ad.tblcategory.id_category LIMIT 10";
         $query_pro = mysqli_query($mysqli, $sql_pro);
@@ -19,10 +38,6 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-        }
-        li{
-            margin-right: 20px;
-           
         }
         .li{
             display: flex;
@@ -60,7 +75,7 @@
                     while($row = mysqli_fetch_array($query_pro)){
                 ?>
                 <li class="li">
-                    <a href="index.php?quanly=sanpham&id=<?php echo $row['id_product']; ?>">
+                    <a class="a" href="index.php?quanly=sanpham&id=<?php echo $row['id_product']; ?>">
                         <img src="../admin/modules/quanlysp/imgs/<?php echo $row['anh'] ?>" height="200px" width="300px">
                         <p>Tên sản phẩm: <?php echo $row['name_product'] ?></p>
                         <p>Giá: <?php echo $row['gia'].' VNĐ' ?></p>
