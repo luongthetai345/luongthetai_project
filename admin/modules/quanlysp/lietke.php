@@ -34,7 +34,7 @@
         <td><?php echo $row['id_product']; ?></td>
         <td><?php echo $row['name_product']; ?></td>
         <td><?php echo $row['soluong']; ?></td>
-        <td><img src="modules/quanlysp/imgs/<?php echo $row['anh']; ?>"><?php echo $row['anh'] ?></td>
+        <td><img src="modules/quanlysp/imgs/<?php echo $row['anh']; ?>"></td>
         <td><?php echo $row['introduct']; ?></td>
         <td><?php echo $row['gia']; ?></td>
         <td><?php echo $row['name_category']; ?></td>

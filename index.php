@@ -12,11 +12,11 @@
 </head>
 
 <body>
-    <?php include('../admin/config/config.php') ?>
-    <?php include('header.php'); ?>
-    <?php include('menu.php') ?>
-    <?php include('main.php') ?>
-    <?php include('footer.php'); ?>
+    <?php include('admin/config/config.php'); ?>
+    <?php include('frontend/header.php'); ?>
+    <?php include('frontend/menu.php'); ?>
+    <?php include('frontend/main.php'); ?>
+    <?php include('frontend/footer.php'); ?>
 </body>
 
 </html>

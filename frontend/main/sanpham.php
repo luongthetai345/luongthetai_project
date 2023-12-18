@@ -27,8 +27,9 @@
 
 
 <div class="div1">
-    <img src="../admin/modules/quanlysp/imgs/<?php echo $row_chitiet['anh'] ?>" height="300px" width="350px">
-    <form action="main/themgiohang.php?idsanpham=<?php echo $row_chitiet['id_product'] ?>" method="POST">
+    <img src="./admin/modules/quanlysp/imgs/<?php echo $row_chitiet['anh'] ?>" height="300px" width="350px">
+    <!-- <form action="index.php?quanly=giohang&idsanpham=<?php echo $row_chitiet['id_product'] ?>" method="POST"> -->
+    <form action="frontend/main/themgiohang.php?idsanpham=<?php echo $row_chitiet['id_product'] ?>" method="POST">
         <div>
             <h5>Tên sản phẩm: <?php echo $row_chitiet['name_product'] ?></h5>
             <p>Số lượng: <?php echo $row_chitiet['soluong'] ?></p>

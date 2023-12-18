@@ -6,13 +6,13 @@
             $tam = '';
         }
         if($tam == 'index'){
-            include('main/index.php');
+            include('frontend/main/index.php');
         }else if($tam == 'danhmucsanpham'){
-            include('main/danhmuc.php');
+            include('frontend/main/danhmuc.php');
         }else if($tam == 'giohang'){
-            include('main/giohang.php');
+            include('frontend/main/giohang.php');
         }else if($tam == 'sanpham'){
-            include('main/sanpham.php');
+            include('frontend/main/sanpham.php');
         }
     ?>
 </div>

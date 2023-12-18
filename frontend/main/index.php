@@ -50,13 +50,13 @@
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="imgs/slide1.png" width="100%" height="500px" alt="...">
+                    <img src="./imgs/a1.jpg" width="100%" height="500px" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="imgs/slide2.png" width="100%" height="500px" alt="...">
+                    <img src="./imgs/banner.png" width="100%" height="500px" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="imgs/slide3.png" width="100%" height="500px" alt="...">
+                    <img src="./imgs/1200x675.png" width="100%" height="500px" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -76,7 +76,7 @@
                 ?>
                 <li class="li">
                     <a class="a" href="index.php?quanly=sanpham&id=<?php echo $row['id_product']; ?>">
-                        <img src="../admin/modules/quanlysp/imgs/<?php echo $row['anh'] ?>" height="200px" width="300px">
+                        <img src="./admin/modules/quanlysp/imgs/<?php echo $row['anh'] ?>" height="200px" width="300px">
                         <p>Tên sản phẩm: <?php echo $row['name_product'] ?></p>
                         <p>Giá: <?php echo $row['gia'].' VNĐ' ?></p>
                     </a>
