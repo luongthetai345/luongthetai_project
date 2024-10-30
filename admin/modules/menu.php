@@ -36,10 +36,11 @@
     </style>
     <nav>
         <ul>
-            <li><a href="index.php?action=quanlydanhmucsanpham&query=them" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Quản lý danh mục sản phẩm</a></li>
-            <li><a href="index.php?action=quanlysanpham&query=them" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Quản lý sản phẩm</a></li>
-            <li><a href="index.php?action=quanlynguoidung&query=them" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Quản lý người dùng</a></li>
-            <li><a href="index.php?action=quanlydonhang&query=them" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Quản lý đơn hàng</a></li>
+            <li><a href="index.php?action=quanlydanhmucsanpham&query=lietke" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Quản lý danh mục sản phẩm</a></li>
+            <li><a href="index.php?action=quanlysanpham&query=lietke" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Quản lý sản phẩm</a></li>
+            <li><a href="index.php?action=quanlynguoidung&query=lietke" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Quản lý người dùng</a></li>
+            <li><a href="index.php?action=quanlydonhang&query=lietke" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Quản lý đơn hàng</a></li>
+            
         </ul>
     </nav>
 </body>

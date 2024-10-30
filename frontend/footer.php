@@ -38,11 +38,9 @@
                         <span class="input-group-text" id="basic-addon2"><a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-paper-plane text-success fs-3"></i></a></span>
                     </div>
                     <div class="row">
-                        <div class="col-md-1 fs-2"><i class="fa-brands fa-facebook"></i></div>
-                        <div class="col-md-1 fs-2"><i class="fa-brands fa-twitter"></i></div>
-                        <div class="col-md-1 fs-2"><i class="fa-brands fa-google"></i></div>
-                        <div class="col-md-1 fs-2"><i class="fa-brands fa-youtube"></i></div>
-                        <div class="col-md-1 fs-2"><i class="fa-brands fa-tiktok"></i></div>
+                        <div class="col-md-1 fs-2"><a href="https://www.facebook.com/profile.php?id=100071853593860" style="text-decoration: none; color: white;"><i class="fa-brands fa-facebook"></i></a></div>
+                        <div class="col-md-1 fs-2"><a href="https://www.youtube.com/channel/UCylyZ1lIcpZEjOXqg0J601A" style="text-decoration: none; color: white;"><i class="fa-brands fa-youtube"></i></a></div>
+                        <div class="col-md-1 fs-2"><a href="https://www.tiktok.com/@52lngthti" style="text-decoration: none; color: white;"><i class="fa-brands fa-tiktok"></i></a></div>
                     </div>
                 </div>
             </div>

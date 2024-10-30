@@ -46,10 +46,10 @@
                     while($row_pro = mysqli_fetch_array($query_product)){
                 ?>
                 <li class="li">
-                    <a href="./index.php?quanly=sanpham&id=<?php echo $row_pro['id_product']; ?>">
+                    <a href="./index.php?quanly=sanpham&id=<?php echo $row_pro['id_product']; ?>" style="text-decoration: none; color: black; text-align: center;">
                         <img src="./admin/modules/quanlysp/imgs/<?php echo $row_pro['anh'] ?>" height="200px" width="300px" >
                         <p>Tên sản phẩm: <?php echo $row_pro['name_product'] ?></p>
-                        <p>Giá: <?php echo $row_pro['gia']." VNĐ" ?></p>
+                        <p style="color: red">Giá: <?php echo number_format($row_pro['gia'], 0, ',', '.'). ' VNĐ' ?></p>
                     </a>
                 </li>
                 <?php

@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +21,12 @@
                     <a href="./index.php?quanly=index"><img src="imgs/logo.png" alt=""></a>
                 </div>
                 <div class="col-md-4">
+                    <form action="index.php?quanly=timkiem" method="POST">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Tìm kiếm" aria-label="Tìm kiếm" aria-describedby="basic-addon2">
-                        <span class="input-group-text" id="basic-addon2"><a href=""><i class="fa-solid fa-magnifying-glass text-success"></i></a></span>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm" aria-label="Tìm kiếm" aria-describedby="basic-addon2" name="tukhoa">
+                            <span class="input-group-text" id="basic-addon2"><button style="border: 0px solid white"><i class="fa-solid fa-magnifying-glass text-success"></i></button></span>
                     </div>
+                    </form>
                 </div>
                 <div class="col-md-3">
                     <div class="row">
@@ -46,8 +51,25 @@
                                     </div>
                                 </div>
                                 <div class="col-9">
-                                    Xin chào! <br>
-                                    <strong><a href="./sign-in.php" style="color: #FFFFFF; text-decoration: none;">Đăng nhập</a></strong>
+                                    Xin chào! <?php
+                                        if(isset($_SESSION['dangky'])){
+                                            echo $_SESSION['dangky'];
+                                        
+                                        }
+                                    ?>
+                                    <br>
+                                    <strong>
+                                        <?php
+                                        if(isset($_SESSION['dangky'])){
+                                            if(isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1){
+                                                unset($_SESSION['dangky']);
+                                                header('Location:index.php?quanly=index');
+                                            }
+                                            echo '<a href="index.php?dangxuat=1" style="text-decoration: none; color: white;">Đăng xuất</a>';
+                                        }else{
+                                            echo '<a href="index.php?quanly=dangky" style="color: #FFFFFF; text-decoration: none;">Đăng kí</a>';
+                                        }
+                                    ?></strong>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +77,7 @@
 
                 </div>
                 <div class="col-md-2">
-                    <div class="fs-2"><a href="frontend/main/giohang.php" style="color: #FFFFFF; text-decoration: none;"><i class="fa-solid fa-cart-shopping" ></i></a></div>
+                    <div class="fs-2"><a href="./index.php?quanly=giohang" style="color: #FFFFFF; text-decoration: none;"><i class="fa-solid fa-cart-shopping" ></i></a></div>
                 </div>
             </div>
         </div>

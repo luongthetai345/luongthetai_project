@@ -30,7 +30,7 @@
     }
 </style>
     <?php
-        $sql_pro = "SELECT * FROM php_ad.tblproduct, php_ad.tblcategory WHERE php_ad.tblproduct.category = php_ad.tblcategory.id_category LIMIT 10";
+        $sql_pro = "SELECT * FROM php_ad.tblproduct, php_ad.tblcategory WHERE php_ad.tblproduct.category = php_ad.tblcategory.id_category LIMIT 8";
         $query_pro = mysqli_query($mysqli, $sql_pro);
     ?>
     <style>
@@ -69,16 +69,17 @@
                 </button>
         </div>
         <div class="container">
-            <h3>Sản phẩm mới nhất</h3>
+            <br>
+            <h3>Sản phẩm mới nhất</h3><br>
             <ul>
                 <?php
                     while($row = mysqli_fetch_array($query_pro)){
                 ?>
                 <li class="li">
-                    <a class="a" href="index.php?quanly=sanpham&id=<?php echo $row['id_product']; ?>">
+                    <a class="a" href="index.php?quanly=sanpham&id=<?php echo $row['id_product']; ?>" style="text-decoration: none; color: black; text-align: center;">
                         <img src="./admin/modules/quanlysp/imgs/<?php echo $row['anh'] ?>" height="200px" width="300px">
                         <p>Tên sản phẩm: <?php echo $row['name_product'] ?></p>
-                        <p>Giá: <?php echo $row['gia'].' VNĐ' ?></p>
+                        <p style="color: red">Giá: <?php echo number_format($row['gia'], 0, ',', '.'). ' VNĐ' ?></p>
                     </a>
                 </li>
                 <?php

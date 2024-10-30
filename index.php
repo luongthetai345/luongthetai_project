@@ -15,7 +15,7 @@
     <?php include('admin/config/config.php'); ?>
     <?php include('frontend/header.php'); ?>
     <?php include('frontend/menu.php'); ?>
-    <?php include('frontend/main.php'); ?>
+    <?php include('frontend/main.php'); ?><br>
     <?php include('frontend/footer.php'); ?>
 </body>
 

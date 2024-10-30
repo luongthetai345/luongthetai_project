@@ -1,3 +1,10 @@
+<?php
+   
+    if(isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1){
+        unset($_SESSION['dangnhap']);
+        header('Location:login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +19,17 @@
             text-align: center;
         }
     </style>
-    <h1>Welcome to Admin Page</h1>
+    <h1>Welcome to Admin Page: 
+        <?php 
+            if(isset($_SESSION['dangnhap'])){
+                echo $_SESSION['dangnhap'];
+            } 
+        ?>
+        <button class="btn btn-primary">
+        <a href="index.php?dangxuat=1" style="text-decoration: none; color: white;">Đăng xuất</a>
+        </button>
+        
+    </h1>
+    
 </body>
 </html>

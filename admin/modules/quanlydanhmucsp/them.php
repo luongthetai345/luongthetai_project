@@ -14,6 +14,10 @@
         <h3>Thêm danh mục sản phẩm</h3>
         <table border="1px" style="border-collapse: collapse;" class="table table-striped-columns">
             <tr>
+                <td>Id</td>
+                <Td><input type="text" name='id' class="form-control"></Td>
+            </tr>
+            <tr>
                 <td>Tên</td>
                 <td><input type="text" name='tendanhmuc' class="form-control"></td>
             </tr>

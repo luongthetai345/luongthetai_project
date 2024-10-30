@@ -13,6 +13,20 @@
             include('frontend/main/giohang.php');
         }else if($tam == 'sanpham'){
             include('frontend/main/sanpham.php');
+        }else if($tam == 'timkiem'){
+            include('frontend/main/timkiem.php');
+        }else if($tam == 'dangky'){
+            include('frontend/main/dangky.php');
+        }else if($tam == 'thanhtoan'){
+            include('frontend/main/thanhtoan.php');
+        }else if($tam == 'camon'){
+            include('frontend/main/camon.php');
+        }else if($tam == 'xuly'){
+            include('frontend/main/xuly.php');
+        }else if($tam == 'thanhtoanmomo'){
+            include('frontend/main/thanhtoanmomo.php');
+        }else{
+            include('frontend/main/index.php');
         }
     ?>
 </div>

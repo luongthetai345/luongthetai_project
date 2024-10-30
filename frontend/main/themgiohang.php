@@ -21,7 +21,7 @@
                 $_SESSION['cart'] = $product;
             }
         }
-        header("Location: giohang.php");
+        header("Location: ../../index.php?quanly=giohang");
     }
     if(isset($_GET['tru'])){
         $id = $_GET['tru'];
@@ -42,7 +42,7 @@
                 $_SESSION['cart'] = $product;
             }
         }
-        header("Location: giohang.php");
+        header("Location: ../../index.php?quanly=giohang");
     }
 
     if(isset($_SESSION['cart'])&& isset($_GET['xoa'])){
@@ -54,13 +54,13 @@
                 'soluong'=>$cart_item['soluong'],'giasanpham'=>$cart_item['gia'],'anh'=>$cart_item['anh']);
             }
         $_SESSION['cart']=$product;
-        header('Location: giohang.php');
+        header("Location: ../../index.php?quanly=giohang");
         }
 		
 	}
     if(isset($_GET['xoatatca']) && $_GET['xoatatca'] == 1){
         unset($_SESSION['cart']);
-        header("Location: giohang.php");
+        header("Location: ../../index.php?quanly=giohang");
     }
 
     if(isset($_POST['themgiohang'])){
@@ -92,6 +92,6 @@
             }
         }
     }
-    header("Location: giohang.php");
+    header("Location: ../../index.php?quanly=giohang");
 ?>
 

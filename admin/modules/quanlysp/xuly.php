@@ -18,7 +18,7 @@
             VALUE( '".$tensanpham."', '".$soluong."', '".$anh."', '".$gioithieu."', '".$gia."', '".$danhmuc."', '".$thutu."')";
             mysqli_query($mysqli, $sql_them);
             
-            header('Location:../../index.php?action=quanlysanpham&query=them');
+            header('Location:../../index.php?action=quanlysanpham&query=lietke');
         }
        
     }else if(isset($_POST['sua'])){
@@ -38,12 +38,12 @@
         }
         
         mysqli_query($mysqli, $sql_update);
-        header('Location:../../index.php?action=quanlysanpham&query=them');
+        header('Location:../../index.php?action=quanlysanpham&query=lietke');
     }else {
         $id = $_GET['idsp'];
         $sql_xoa = "DELETE FROM php_ad.tblproduct WHERE id_product = '".$id."'";
         mysqli_query($mysqli, $sql_xoa);
-        header('Location:../../index.php?action=quanlysanpham&query=them');
+        header('Location:../../index.php?action=quanlysanpham&query=lietke');
     }
     
 ?>
