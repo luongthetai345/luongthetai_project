@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
                                 <div class="col-9">
-                                    Tư vấn hỗ trợ<br>
+                                    Liên hệ<br>
                                     <strong>1900 1515</strong>
                                 </div>
                             </div>

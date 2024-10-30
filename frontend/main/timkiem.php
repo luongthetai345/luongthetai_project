@@ -1,9 +1,4 @@
-<?php
-    $mysqli = mysqli_connect('localhost', 'root', 'Tai@02102003', 'php_ad');
-    if(mysqli_connect_errno()){
-        echo "Error connectiong to MySQL: ".mysqli_connect_error();
-    }
-?>
+
 <?php
     $tukhoa = $_POST['tukhoa'];
     $sql_timkiem = "SELECT * FROM php_ad.tblproduct WHERE name_product LIKE '%".$tukhoa."%' ";

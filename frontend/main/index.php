@@ -50,13 +50,13 @@
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./imgs/a1.jpg" width="100%" height="500px" alt="...">
+                    <img src="./imgs/banner2.jpg" width="100%" height="500px" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./imgs/banner.png" width="100%" height="500px" alt="...">
+                    <img src="./imgs/banner3.jpg" width="100%" height="500px" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./imgs/1200x675.png" width="100%" height="500px" alt="...">
+                    <img src="./imgs/banner4.jpg" width="100%" height="500px" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

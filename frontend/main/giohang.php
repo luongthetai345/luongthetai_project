@@ -1,12 +1,6 @@
+
 <?php
-    session_start();
-?>
-<?php
-    if($_SESSION['cart']){
-        // echo "<pre>";
-        // print_r($_SESSION['cart']);
-        // echo "</pre>";
-    }
+    
     if(isset($_GET['cong'])){
         // session_destroy();
         $id = $_GET['cong'];

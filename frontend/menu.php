@@ -20,9 +20,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="index.php?quanly=index">Trang chủ</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="index.php?quanly=index">Giới thiệu</a>
-                                </li>
+                                
                                 <?php
                                     while($row_category = mysqli_fetch_array($query_category)){
                                 ?>
@@ -32,9 +30,7 @@
                                 <?php 
                                     } 
                                 ?>
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="index.php?quanly=index">Liên hệ</a>
-                                </li>
+                                
                                 
                             </ul>
                         </div>

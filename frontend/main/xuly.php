@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    
     if(isset($_POST['dangky'])){
         $hoten = $_POST['hoten'];
         $email = $_POST['email'];

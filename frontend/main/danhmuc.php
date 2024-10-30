@@ -6,12 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-    $mysqli = mysqli_connect('localhost', 'root', 'Tai@02102003', 'php_ad');
-    if(mysqli_connect_errno()){
-        echo "Error connectiong to MySQL: ".mysqli_connect_error();
-    }
-?>
+
     <?php
         $sql_product = "SELECT * FROM  php_ad.tblproduct WHERE php_ad.tblproduct.category = '$_GET[id]' ";
         $query_product = mysqli_query($mysqli, $sql_product);
