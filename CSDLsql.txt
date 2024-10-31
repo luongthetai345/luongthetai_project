@@ -1,0 +1,214 @@
+php_ad.sql
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 31, 2024 lúc 10:51 AM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.0.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Cơ sở dữ liệu: `php_ad`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbladmin`
+--
+
+CREATE TABLE `tbladmin` (
+  `id_admin` int(11) NOT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `admin_status` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbladmin`
+--
+
+INSERT INTO `tbladmin` (`id_admin`, `username`, `password`, `admin_status`) VALUES
+(1, 'luongthetai', 'Tai@02102003', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tblcart`
+--
+
+CREATE TABLE `tblcart` (
+  `id_cart` int(11) NOT NULL,
+  `id_khachhang` int(11) DEFAULT NULL,
+  `code_cart` int(11) DEFAULT NULL,
+  `cart_status` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tblcart_details`
+--
+
+CREATE TABLE `tblcart_details` (
+  `id_cart_details` int(11) NOT NULL,
+  `code_cart` int(11) DEFAULT NULL,
+  `id_product` int(11) DEFAULT NULL,
+  `soluong` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tblcategory`
+--
+
+CREATE TABLE `tblcategory` (
+  `id_category` int(11) NOT NULL,
+  `name_category` varchar(100) DEFAULT NULL,
+  `thutul` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tblcategory`
+--
+
+INSERT INTO `tblcategory` (`id_category`, `name_category`, `thutul`) VALUES
+(0, 'Bánh', 1),
+(1, 'Kẹo', 2),
+(2, 'Đồ uống', 3),
+(4, 'Snacks', 4),
+(5, 'Sản phẩm khác', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbldangky`
+--
+
+CREATE TABLE `tbldangky` (
+  `id_dangky` int(11) NOT NULL,
+  `hoten` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `diachi` varchar(45) DEFAULT NULL,
+  `matkhau` varchar(45) DEFAULT NULL,
+  `sodienthoai` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tblproduct`
+--
+
+CREATE TABLE `tblproduct` (
+  `id_product` int(11) NOT NULL,
+  `name_product` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `soluong` int(11) DEFAULT NULL,
+  `anh` varchar(50) DEFAULT NULL,
+  `introduct` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `gia` varchar(100) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL,
+  `thutu` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tblproduct`
+--
+
+INSERT INTO `tblproduct` (`id_product`, `name_product`, `soluong`, `anh`, `introduct`, `gia`, `category`, `thutu`) VALUES
+(1, 'Nabati Socola, Phô Mai', 200, '1730367476_banh1.jpg', ' Sản phẩm có vị xốp giòn của lớp vỏ bánh hòa quyện vào lớp kem và phô mai béo ngậy mang đến cho bạn ', '2990', 0, 1),
+(2, 'Bánh tươi Karo 26g', 100, '1730366090_banh2.jpg', 'Hương vị: Trứng Tươi Chà Bông. Khối lượng tịnh: 26g/bánh. Xuất xứ: Việt Nam.', '38200', 0, 2),
+(3, 'Bánh mỳ tươi togazz', 99, '1730366255_banh3.jpg', 'Hạn sử dụng 10 - 15 ngày từ ngày sản xuất Bánh mì tươi siêu tiện lợi, dùng cho ăn sáng, đi du lịch, ', '3000', 0, 7),
+(4, 'Coca Cola', 209, '1730366879_drink3.jpg', 'Nước uống giải khát', '10000', 2, 3),
+(5, 'Sữa chua TH', 58, '1730366978_khac3.jpg', 'Sữa chua th true yogurt có đường 100g (vỉ 4 hộp)', '28000', 5, 4),
+(6, 'Kẹo Lá Ngậm Thơm Miệng trái cây', 35, '1730367188_keo1.jpg', 'Thiết kế hộp nhỏ gọn, dễ dàng bỏ túi mang theo để thưởng thức bất kỳ lúc nào', '3500', 1, 8),
+(7, 'Snack Puffs Cheetos 226.8G', 47, '1730367278_snack2.jpg', 'Snack vị phô mai ngon', '65000', 4, 9),
+(8, 'Pepsi', 56, '1730367542_drink4.jpg', 'Đồ uống giải khát', '10000', 2, 10),
+(9, 'Kẹo chocolate Cten 1kg', 15, '1730367623_keo4.jpg', 'Kẹo chocolate Ctep là một trong những loại kẹo đặc biệt của Nga', '125000', 1, 11),
+(10, 'Snack  Ngô', 145, '1730367675_snack1.jpg', 'Snack bắp giòn ngon, thơm thơm vị ngọt kích thích vị giác vô cùng', '10000', 4, 12),
+(11, 'Khô bò', 32, '1730367727_khac4.jpg', 'Khô bò chất lượng', '32000', 5, 13);
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `tbladmin`
+--
+ALTER TABLE `tbladmin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Chỉ mục cho bảng `tblcart`
+--
+ALTER TABLE `tblcart`
+  ADD PRIMARY KEY (`id_cart`);
+
+--
+-- Chỉ mục cho bảng `tblcart_details`
+--
+ALTER TABLE `tblcart_details`
+  ADD PRIMARY KEY (`id_cart_details`);
+
+--
+-- Chỉ mục cho bảng `tblcategory`
+--
+ALTER TABLE `tblcategory`
+  ADD PRIMARY KEY (`id_category`);
+
+--
+-- Chỉ mục cho bảng `tbldangky`
+--
+ALTER TABLE `tbldangky`
+  ADD PRIMARY KEY (`id_dangky`);
+
+--
+-- Chỉ mục cho bảng `tblproduct`
+--
+ALTER TABLE `tblproduct`
+  ADD PRIMARY KEY (`id_product`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `tblcart`
+--
+ALTER TABLE `tblcart`
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT cho bảng `tblcart_details`
+--
+ALTER TABLE `tblcart_details`
+  MODIFY `id_cart_details` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT cho bảng `tbldangky`
+--
+ALTER TABLE `tbldangky`
+  MODIFY `id_dangky` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `tblproduct`
+--
+ALTER TABLE `tblproduct`
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
