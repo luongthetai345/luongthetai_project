@@ -29,6 +29,7 @@
         width: 300px;
     }
 </style>
+
     <?php
         $sql_pro = "SELECT * FROM php_ad.tblproduct, php_ad.tblcategory WHERE php_ad.tblproduct.category = php_ad.tblcategory.id_category LIMIT 8";
         $query_pro = mysqli_query($mysqli, $sql_pro);
@@ -77,7 +78,7 @@
                 ?>
                 <li class="li">
                     <a class="a" href="index.php?quanly=sanpham&id=<?php echo $row['id_product']; ?>" style="text-decoration: none; color: black; text-align: center;">
-                        <img src="./admin/modules/quanlysp/imgs/<?php echo $row['anh'] ?>" height="200px" width="300px">
+                        <img src="./admin/modules/quanlysp/imgs/<?php echo $row['anh'] ?>" height="250px" width="300px">
                         <p>Tên sản phẩm: <?php echo $row['name_product'] ?></p>
                         <p style="color: red">Giá: <?php echo number_format($row['gia'], 0, ',', '.'). ' VNĐ' ?></p>
                     </a>

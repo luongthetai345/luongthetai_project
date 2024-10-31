@@ -27,11 +27,12 @@
 
 
 <div class="div1">
-    <img src="./admin/modules/quanlysp/imgs/<?php echo $row_chitiet['anh'] ?>" height="300px" width="350px">
+    <img src="./admin/modules/quanlysp/imgs/<?php echo $row_chitiet['anh'] ?>" width="300px" height="300px">
     <form action="index.php?quanly=giohang&idsanpham=<?php echo $row_chitiet['id_product'] ?>" method="POST">
     <!-- <form action="frontend/main/themgiohang.php?idsanpham=<?php echo $row_chitiet['id_product'] ?>" method="POST"> -->
         <div>
             <h5>Tên sản phẩm: <?php echo $row_chitiet['name_product'] ?></h5>
+            <p>Giới thiệu: <?php echo $row_chitiet['introduct'] ?></p>
             <p>Số lượng: <?php echo $row_chitiet['soluong'] ?></p>
             <p>Giá: <?php echo number_format($row_chitiet['gia'], 0, ',', '.'). ' VNĐ' ?></p>
             <p>Danh mục: <?php echo $row_chitiet['name_category'] ?></p>
